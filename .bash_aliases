@@ -17,9 +17,9 @@ cdls() {
 }
 
 # aptitude specific aliases
-alias apt-install='apt-get install'
+alias apt-install='sudo apt-get install'
 alias apt-search='apt-cache search'
 alias apt-show='apt-cache show'
-alias apt-purge='apt-get --purge  remove'
-alias apt-remove='apt-get remove'
+alias apt-purge='sudo apt-get --purge  remove'
+alias apt-remove='sudo apt-get remove'
 alias apt-up="sudo apt-get update && sudo apt-get upgrade"
