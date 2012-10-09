@@ -1,6 +1,13 @@
 alias reload='source $HOME/.bashrc'
 
-# perform 'ls' after 'cd' if successful.
+# showa: to remind yourself of an alias (given some part of it)
+showa () { /usr/bin/grep -i -a1 $@ ~/.bash_aliases | grep -v '^\s*$' ; }
+
+alias pingg='ping -c 5 8.8.8.8'
+alias pingx='ping -c 5 www.xkcd.com'
+
+
+# performs 'ls' after 'cd' if directory change is successful.
 cdls() {
   builtin cd "$*"
   RESULT=$?

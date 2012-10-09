@@ -13,6 +13,10 @@ export HISTSIZE=250000
 export HISTFILESIZE=250000
 # Append to the history file, don't overwrite it
 shopt -s histappend
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
  
 # colorize grep, ls, tree
 export GREP_OPTIONS="--color=auto"
