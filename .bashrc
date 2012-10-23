@@ -114,3 +114,5 @@ On_IWhite='\e[0;107m' # White
 
 PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$ "
 trap 'echo -ne "\e[0m"' DEBUG
+
+alias nyux="ssh nyux@192.168.0.10"

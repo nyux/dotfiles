@@ -6,6 +6,7 @@ showa () { /usr/bin/grep -i -a1 $@ ~/.bash_aliases | grep -v '^\s*$' ; }
 alias pingg='ping -c 5 8.8.8.8'
 alias pingx='ping -c 5 www.xkcd.com'
 
+alias untar='tar -zxvf'
 
 # performs 'ls' after 'cd' if directory change is successful.
 cdls() {
