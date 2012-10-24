@@ -20,9 +20,16 @@ shopt -s checkwinsize
  
 # colorize grep, ls, tree
 export GREP_OPTIONS="--color=auto"
-export CLICOLOR=1
-alias ls='ls --color=auto'
 alias tree='tree -Ch'
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
+
+alias ls='ls ${colorflag}h'
 
 export LANG=en_US.UTF-8
 
@@ -112,7 +119,5 @@ On_ICyan='\e[0;106m' # Cyan
 On_IWhite='\e[0;107m' # White
 
 
-PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$ "
-trap 'echo -ne "\e[0m"' DEBUG
-
-alias nyux="ssh nyux@192.168.0.10"
+PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
+#trap 'echo -ne "\e[0m"' DEBUG
