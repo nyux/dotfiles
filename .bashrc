@@ -29,7 +29,7 @@ else # OS X `ls`
 	colorflag="-G"
 fi
 
-alias ls='ls ${colorflag}h'
+alias ls='ls -h ${colorflag}'
 
 export LANG=en_US.UTF-8
 
