@@ -1,49 +1,6 @@
-# if not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
-export EDITOR=vim
-
-if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
-    export TERM=xterm-256color
-fi
-
-# make .bash_history store more and not store duplicates
-export HISTCONTROL=ignoreboth:erasedups
-export HISTSIZE=250000
-export HISTFILESIZE=250000
-# Append to the history file, don't overwrite it
-shopt -s histappend
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
- 
-# colorize grep, ls, tree
-export GREP_OPTIONS="--color=auto"
-alias tree='tree -Ch'
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
-
-alias ls='ls -h ${colorflag}'
-
-export LANG=en_US.UTF-8
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe.sh ] && export LESSOPEN="|/usr/bin/lesspipe.sh %s"
-
-# import the rest of my aliases and functions from a separate file
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
-
-##################################################
+# -----------------------------------------------------------------------------
 # wrappers for color esc sequences
-##################################################
+# -----------------------------------------------------------------------------
 
 # Reset
 Color_Off='\e[0m' # Text Reset
@@ -118,6 +75,56 @@ On_IPurple='\e[10;95m' # Purple
 On_ICyan='\e[0;106m' # Cyan
 On_IWhite='\e[0;107m' # White
 
+# -----------------------------------------------------------------------------
+# Settings
+# -----------------------------------------------------------------------------
 
-PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
-#trap 'echo -ne "\e[0m"' DEBUG
+# if not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+export EDITOR=vim
+
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
+# make .bash_history store more and not store duplicates
+export HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE=250000
+export HISTFILESIZE=250000
+# Append to the history file, don't overwrite it
+shopt -s histappend
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+ 
+# colorize grep, ls, tree
+export GREP_OPTIONS="--color=auto"
+alias tree='tree -Ch'
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
+
+alias ls='ls -h ${colorflag}'
+
+export LANG=en_US.UTF-8
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe.sh ] && export LESSOPEN="|/usr/bin/lesspipe.sh %s"
+
+# import the rest of my aliases and functions from a separate file
+if [ -f ~/.aliases.bash ]; then
+	. ~/.aliases.bash
+fi
+
+if [ $(uname) = "Linux" ]; then
+	PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIPurple\] "
+	trap 'echo -ne "\e[0m"' DEBUG
+else
+	PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
+fi

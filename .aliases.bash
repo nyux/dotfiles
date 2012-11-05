@@ -3,8 +3,8 @@ alias reload='source $HOME/.bashrc'
 # showa: to remind yourself of an alias (given some part of it)
 showa () { /usr/bin/grep -i -a1 $@ ~/.bash_aliases | grep -v '^\s*$' ; }
 
-alias pingg='ping -c 5 8.8.8.8'
-alias pingx='ping -c 5 www.xkcd.com'
+alias gping='ping -c 5 8.8.8.8'
+alias xping='ping -c 5 www.xkcd.com'
 
 alias untar='tar -zxvf'
 
@@ -17,10 +17,22 @@ cdls() {
   fi
 }
 
-# aptitude specific aliases
-alias apt-install='sudo apt-get install'
-alias apt-search='apt-cache search'
-alias apt-show='apt-cache show'
-alias apt-purge='sudo apt-get --purge  remove'
-alias apt-remove='sudo apt-get remove'
-alias apt-up="sudo apt-get update && sudo apt-get upgrade"
+orphans() {
+  if [[ ! -n $(pacman -Qdt) ]]; then
+    echo "No orphans to remove."
+  else
+    sudo pacman -Rs $(pacman -Qdtq)
+  fi
+}
+
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+      man "$@"
+}
