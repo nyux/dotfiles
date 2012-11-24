@@ -24,3 +24,4 @@ Also plan to segregate files by OS, since my time will be split between Arch and
 * .screenrc
 * repo-specific .gitignore
 * .weechat configs/plugins, sans irc.conf
+* defaults.list, used by xdg-open to configure default apps
