@@ -1,7 +1,7 @@
 alias reload='source $HOME/.bashrc'
 
 # showa: to remind yourself of an alias (given some part of it)
-showa () { /usr/bin/grep -i -a1 $@ ~/.bash_aliases | grep -v '^\s*$' ; }
+showa () { /usr/bin/grep -i -a1 $@ ~/.aliases.bash | grep -v '^\s*$' ; }
 
 alias gping='ping -c 5 8.8.8.8'
 alias xping='ping -c 5 www.xkcd.com'
@@ -24,6 +24,9 @@ orphans() {
     sudo pacman -Rs $(pacman -Qdtq)
   fi
 }
+
+alias bastion="force_s3tc_enable=true bastion"
+alias packer="packer-color"
 
 man() {
   env \
