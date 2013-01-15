@@ -128,3 +128,5 @@ if [ $(uname) = "Linux" ]; then
 else
 	PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
 fi
+
+PATH="$PATH":$(ruby -rubygems -e "puts Gem.user_dir")/bin
