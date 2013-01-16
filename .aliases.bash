@@ -26,7 +26,7 @@ orphans() {
 }
 
 alias bastion="force_s3tc_enable=true bastion"
-alias packer="packer-color"
+#alias packer="packer-color"
 
 man() {
   env \
@@ -39,3 +39,4 @@ man() {
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
       man "$@"
 }
+alias vba="VisualBoyAdvance"
