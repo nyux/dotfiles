@@ -113,6 +113,7 @@ fi
 alias ls='ls -h ${colorflag}'
 
 export LANG=en_US.UTF-8
+export BROWSER=firefox
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe.sh ] && export LESSOPEN="|/usr/bin/lesspipe.sh %s"
@@ -129,4 +130,4 @@ else
 	PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
 fi
 
-PATH="$PATH":$(ruby -rubygems -e "puts Gem.user_dir")/bin
+PATH=/home/nyux/bin:/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH:$(ruby -rubygems -e "puts Gem.user_dir")
