@@ -14,7 +14,7 @@ URxvt*geometry:					80x25
 URxvt*foreground:				grey80
 URxvt*borderLess:				false
 URxvt*depth:					32
-URxvt*background:				rgba:0000/0000/0000/dddd
+URxvt*background:				rgba:0000/0000/0000/ffff
 URxvt.scrollBar:  				false
 URxvt*font:					xft:DejaVu Sans Mono-8
 URxvt*cursorBlink:				true
