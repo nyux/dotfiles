@@ -46,3 +46,4 @@ alias vba="VisualBoyAdvance"
 
 alias irc="ssh emilia@zecora.aiiane.com"
 alias moons="ssh eazure@moons.cs.unm.edu"
+
