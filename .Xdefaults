@@ -16,7 +16,7 @@ URxvt*borderLess:				false
 URxvt*depth:					32
 URxvt*background:				rgba:0000/0000/0000/ffff
 URxvt.scrollBar:  				false
-URxvt*font:					xft:DejaVu Sans Mono-8
+URxvt*font:					xft:DejaVu Sans Mono-10
 URxvt*cursorBlink:				true
 URxvt*cursorUnderline:			true
 URxvt*scrollColor:				#111111
