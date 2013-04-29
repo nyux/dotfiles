@@ -1,6 +1,5 @@
 [Default Applications]
-inode/directory=pcmanfm.desktop
-application/pdf=epdfviewer.desktop
+application/pdf=zathura.desktop
 text/html=firefox.desktop
 text/xml=firefox.desktop
 application/xhtml+xml=firefox.desktop
