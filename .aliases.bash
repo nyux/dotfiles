@@ -25,9 +25,6 @@ orphans() {
   fi
 }
 
-alias bastion="force_s3tc_enable=true bastion"
-#alias packer="packer-color"
-
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
