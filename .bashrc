@@ -102,32 +102,36 @@ shopt -s checkwinsize
 # colorize grep, ls, tree
 export GREP_OPTIONS="--color=auto"
 alias tree='tree -Ch'
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
-
-alias ls='ls -h ${colorflag}'
+alias ls='ls -h --color=auto'
 
 export LANG=en_US.UTF-8
 export BROWSER=firefox
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe.sh ] && export LESSOPEN="|/usr/bin/lesspipe.sh %s"
+# make less more friendly for non-text input files
+# and allow for syntax highlighting
+# depends on the lesspipe and python2-pygments packages
+export LESSOPEN="|/usr/bin/lesspipe.sh %s"
+export LESS=' -R '
+export LESSCOLORIZER='pygmentize'
+
+# codes to colorize man pages using termcap
+# termcap is technically deprecated, but there are
+# no resources for using terminfo for this
+# source for these colors: http://bit.ly/LAOvnE
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[38;5;246m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
 # import the rest of my aliases and functions from a separate file
 if [ -f ~/.aliases.bash ]; then
 	. ~/.aliases.bash
 fi
 
-if [ $(uname) = "Linux" ]; then
-	PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIPurple\] "
-	trap 'echo -ne "\e[0m"' DEBUG
-else
-	PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
-fi
-
 PATH=/home/nyux/bin:/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH:$(ruby -rubygems -e "puts Gem.user_dir")
+
+PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIPurple\] "
+trap 'echo -ne "\e[0m"' DEBUG
