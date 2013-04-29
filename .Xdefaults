@@ -20,8 +20,8 @@ URxvt*cursorUnderline: true
 URxvt*scrollColor: #111111
 URxvt*perl-ext-common: default,matcher
 URxvt*url-launcher: /usr/bin/firefox
-!URxvt.matcher.button:			1
-!URxvt.colorUL: #4682B4
+URxvt.matcher.button:			1
+URxvt.colorUL: #4682B4
 
 ! black
 URxvt*color0  : #2E3436
