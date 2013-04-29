@@ -8,8 +8,6 @@ alias xping='ping -c 5 www.xkcd.com'
 
 alias untar='tar -zxvf'
 
-alias ftime='sudo ntpd -qg'
-
 # performs 'ls' after 'cd' if directory change is successful.
 cdls() {
   builtin cd "$*"
