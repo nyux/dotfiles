@@ -1,0 +1,158 @@
+set $mod Mod4
+
+exec_always --no-startup-id nm-applet
+exec --no-startup-id feh --bg-scale ~/images/wallpapers/fan-gasm/umbreon.png
+
+##############################################################################
+# Style
+##############################################################################
+
+font xft:DejaVu Sans Mono 10
+new_window pixel 1
+focus_follows_mouse  no
+
+set $blue #005588
+set $gray1 #484848
+set $gray2 #333333
+
+client.focused            $gray1   $gray1   #FFFFFF   #333333
+client.focused_inactive   $gray2   $gray2   #FFFFFF   #000000
+client.unfocused          $gray2   $gray2   #FFFFFF   #000000
+
+bar {
+        position top
+        status_command ~/.i3/conky
+        colors { 
+                statusline #AAAAAA
+                background #333333
+                focused_workspace $gray2 $gray2 #FFFFFF
+                inactive_workspace $gray1 $gray1 #AAAAAA
+        }
+}
+
+##############################################################################
+# Navigation and window management
+##############################################################################
+
+# switch to workspace x
+bindsym $mod+1 workspace 1: α
+bindsym $mod+2 workspace 2: β
+bindsym $mod+3 workspace 3: γ
+bindsym $mod+4 workspace 4: δ
+bindsym $mod+5 workspace 5: ε
+bindsym $mod+6 workspace 6: ζ
+bindsym $mod+7 workspace 7: η
+bindsym $mod+8 workspace 8: θ
+bindsym $mod+9 workspace 9: ι
+bindsym $mod+0 workspace 10: κ
+
+# move focused container to workspace x
+bindsym $mod+Shift+1 move container to workspace 1: α
+bindsym $mod+Shift+2 move container to workspace 2: β
+bindsym $mod+Shift+3 move container to workspace 3: γ
+bindsym $mod+Shift+4 move container to workspace 4: δ
+bindsym $mod+Shift+5 move container to workspace 5: ε
+bindsym $mod+Shift+6 move container to workspace 6: ζ
+bindsym $mod+Shift+7 move container to workspace 7: η
+bindsym $mod+Shift+8 move container to workspace 8: θ
+bindsym $mod+Shift+9 move container to workspace 9: ι
+bindsym $mod+Shift+0 move container to workspace 10: κ
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+Left focus left
+bindsym $mod+k focus down
+bindsym $mod+Down focus down
+bindsym $mod+l focus up
+bindsym $mod+Up focus up
+bindsym $mod+semicolon focus right
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Right move right
+
+# split in horizontal/vertical orientation
+bindsym $mod+v split h
+bindsym $mod+h split v
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (tabbed, toggle split)
+bindsym $mod+n layout tabbed
+bindsym $mod+m layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+f floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# switch to last workspace
+bindsym $mod+i workspace back_and_forth
+
+# kill focused window
+bindsym $mod+q kill
+
+mode "resize" {
+        bindsym j   resize shrink width 10 px or 10 ppt
+        bindsym k   resize grow height 10 px or 10 ppt
+        bindsym l   resize shrink height 10 px or 10 ppt
+        bindsym semicolon   resize grow width 10 px or 10 ppt
+
+        bindsym Left   resize shrink width 10 px or 10 ppt
+        bindsym Down   resize grow height 10 px or 10 ppt
+        bindsym Up   resize shrink height 10 px or 10 ppt
+        bindsym Right   resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or q or ^[
+        bindsym Return mode "default"
+        bindsym q mode "default"
+        bindsym Escape mode "default"
+        bindcode Control+34 mode "default"
+}
+
+bindsym $mod+s mode "resize"
+
+##############################################################################
+# Other keybinds
+##############################################################################
+
+# start a terminal
+bindsym $mod+t exec --no-startup-id urxvt
+
+# start dmenu
+bindsym $mod+p exec --no-startup-id dmenu_run -nb black
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+bindsym $mod+w exec firefox
+bindsym $mod+e exec subl
+bindsym $mod+Shift+t exec hotot-gtk3
+
+# reload i3 config, restart i3, or kill i3 and logout
+bindsym $mod+r reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+x exit
+
+bindsym XF86AudioRaiseVolume exec "amixer set Master '5%+'"
+bindsym XF86AudioLowerVolume exec "amixer set Master '5%-'"
+bindsym XF86AudioMute exec "amixer set Master toggle"
+
+# configs that worked for old person that don't work for me
+ 
+# bindsym XF86KbdBrightnessDown exec "sudo /opt/kbdlight/bin/kbdlight -"
+# bindsym XF86KbdBrightnessUp exec "sudo /opt/kbdlight/bin/kbdlight +"
+# bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
+# 
+# bindsym $mod+a exec "urxvt -e alsamixer"
+# bindsym $mod+Shift+a exec "pavucontrol"
