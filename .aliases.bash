@@ -5,7 +5,6 @@ alias xping='ping -c 5 www.xkcd.com'
 
 alias untar='tar -zxvf'
 
-# depends on openssh
 alias irc="ssh emilia@zecora.aiiane.com"
 alias moons="ssh eazure@moons.cs.unm.edu"
 
