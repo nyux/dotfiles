@@ -131,7 +131,7 @@ if [ -f ~/.aliases.bash ]; then
 	. ~/.aliases.bash
 fi
 
-PATH=/home/nyux/bin:/usr/share/perl5/vendor_perl/auto/share/dist/Cope:$PATH:$(ruby -rubygems -e "puts Gem.user_dir")
+PATH=/home/nyux/bin:$PATH:$(ruby -rubygems -e "puts Gem.user_dir")
 
 PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIPurple\] "
 trap 'echo -ne "\e[0m"' DEBUG
