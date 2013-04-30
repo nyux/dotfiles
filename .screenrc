@@ -1,3 +1,4 @@
+term screen-256color
 defnonblock on
 nonblock on
 defutf8 on
