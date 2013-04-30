@@ -1,27 +1,9 @@
-# Nyux's Dotfiles + Configs
+# Dotfiles + Configs
 
-I've spent way too many hours configuring settings after an OS wipe, or a shoddy `rm` command. //_> This is to make sure that my settings're backed up in one place, and also to make it easy to share them with others.
+This repo is meant as a backup for all my significant dotfiles and configs for bash, urxvt, and i3, to prevent them from getting lost across installs. Still a huge work in progress, that gets better in bursts. i3 configs were forked from [this github repo](https://github.com/NorthAntrim/i3-config) and then modified to suit my tastes.
 
+The configs are no longer geared towards supporting both Linux and OS X, which takes out some verbosity in the `.bashrc`. A few files have also been re-ordered to flow better, and have better semantic meaning.
 
-## Configs to add:
+To take advantage of all the functionality here, install `lesspipe` and `python2-pygments`.
 
-* .gitconfig
-* .vimrc
-
-## Plans?
-
-An install script is on the horizon, either written in bash or ruby.
-
-Just found <http://dotfiles.github.com/>, and will be looking through it. Need to decide if I want to run bash-it, or oh-my-zsh, or just what I have now.
-
-Also plan to segregate files by OS, since my time will be split between Arch and OS X, with a debian system on backup if strictly necessary.
-
-## Currently stored:
-
-* .bashrc
-* .bash_aliases
-* .Xdefaults
-* .screenrc
-* repo-specific .gitignore
-* .weechat configs/plugins, sans irc.conf
-* defaults.list, used by xdg-open to configure default apps
+Eventually, there'll be a script to automate making/deleting symlinks from dotfiles to home.
