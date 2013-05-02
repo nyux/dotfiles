@@ -1,6 +1,6 @@
 set $mod Mod4
 
-exec_always --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-scale ~/images/wallpapers/fan-gasm/umbreon.png
 
 ##############################################################################
@@ -144,9 +144,12 @@ bindsym $mod+r reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+x exit
 
-bindsym XF86AudioRaiseVolume exec "amixer set Master '5%+'"
-bindsym XF86AudioLowerVolume exec "amixer set Master '5%-'"
-bindsym XF86AudioMute exec "amixer set Master toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master '5%+'"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master '5%-'"
+bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle"
+
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight - 10"
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight + 10"
 
 # configs that worked for old person that don't work for me
  
