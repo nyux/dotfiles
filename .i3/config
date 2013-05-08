@@ -155,11 +155,5 @@ bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight - 10
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight + 10
 
-# configs that worked for old person that don't work for me
- 
-# bindsym XF86KbdBrightnessDown exec "sudo /opt/kbdlight/bin/kbdlight -"
-# bindsym XF86KbdBrightnessUp exec "sudo /opt/kbdlight/bin/kbdlight +"
-# bindsym XF86TouchpadToggle exec "synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ {print ($3+1)%2}')"
-# 
-# bindsym $mod+a exec "urxvt -e alsamixer"
-# bindsym $mod+Shift+a exec "pavucontrol"
+bindsym XF86KbdBrightnessDown exec --no-startup-id ~/.i3/kbd_brightness.py -d
+bindsym XF86KbdBrightnessUp exec --no-startup-id ~/.i3/kbd_brightness.py -i
