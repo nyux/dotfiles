@@ -8,7 +8,7 @@ brightness_control = '/sys/devices/platform/samsung/'\
 max_brightness = 8
 min_brightness = 0
 
-parser = argparse.ArgumentParser(description="Manipulate keyboard brightness.", prog="kbd_brightness")
+parser = argparse.ArgumentParser(description="Manipulate keyboard brightness.", prog="brightness")
 group = parser.add_mutually_exclusive_group()
 
 parser.add_argument('-k', '--keyboard', action='store_true', help="get keyboard brightness")
