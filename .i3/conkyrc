@@ -12,8 +12,9 @@ TEXT
 ,[{"full_text" : " ☿ ❤ $acpitemp°C [$cpu%] ", "color": "\#DC322F"},
   {"full_text" : " ♀ ≣ ${exec ~/.i3/amixer.py} ", "color" : "\#B58900"},
   {"full_text" : " ♁ ⌨ ${exec ~/.i3/brightness.py -k} ⎚ ${exec ~/.i3/brightness.py -m} ", "color" : "\#DFDFDF"},
-  {"full_text" : " ♂ ≈ ${wireless_essid wlp1s0} ", "color" : "\#33CC99"},
-  {"full_text" : " ♃ ☇ [${battery_time BAT1}] [${battery_short BAT1}] ", "color" : "\#9933CC"},
-  {"full_text" : " ♄ ᴥ ${time %a %e %b}", "color" : "\#CD23CA"},
-  {"full_text" : " ♅ ⟆${time %l:%M:%S %p} ", "color" : "\#4599CE3"}
+  {"full_text" : " ♂ ⚘ ${exec ~/.i3/study.out} ", "color" : "\#DB882E"},
+  {"full_text" : " ♃ ≈ ${wireless_essid wlp1s0} ", "color" : "\#33CC99"},
+  {"full_text" : " ♄ ☇ [${battery_time BAT1}] [${battery_short BAT1}] ", "color" : "\#9933CC"},
+  {"full_text" : " ♅ ᴥ ${time %a %e %b}", "color" : "\#CD23CA"},
+  {"full_text" : " ♆ ⟆ ${time %l:%M:%S %p} ", "color" : "\#4599CE3"}
 ]
