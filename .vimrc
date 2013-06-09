@@ -118,24 +118,6 @@ set smartcase
 "" mode or when using the "o" or "O" command).
 set autoindent
 
-" Maximum width of text that is being inserted. A longer
-" line will be broken after white space to get this width.
-set textwidth=79
-
-
-" This sequence of letters describes how automatic formatting is done.
-"
-" letter    meaning when present in 'formatoptions'
-" ------    ---------------------------------------
-" c         Auto-wrap comments using textwidth, inserting
-"           the current comment leader automatically.
-" q         Allow formatting of comments with "gq".
-" r         Automatically insert the current comment leader
-"           after hitting <Enter> in Insert mode. 
-" t         Auto-wrap text using textwidth (does not apply
-"           to comments)
-set formatoptions=c,q,r,t
-
 " Show the line + column number of the cursor position, separated by a comma.
 set ruler
 
