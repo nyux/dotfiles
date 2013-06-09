@@ -10,6 +10,9 @@ Obviously, `i3`, and `i3bar`, found in the arch repos under the `i3` group. `con
 
 Optional dependencies, to take advantage of all the functionality here: `lesspipe`, `xbacklight`, `urxvt`, and `python2-pygments`.
 
+.vimrc is here, finally. Dependencies are `vim-colorsamplerpack`
+and `vim-guicolorscheme`.
+
 ## Other tweaks
 
 There are some other tweaks on this machine that aren't included in this repo. `laptop-mode-tools` is installed, and I've followed the tweaks in the **backlight** and **bluetooth** sections of [the power saving article on the Arch wiki.](https://wiki.archlinux.org/index.php/Power_saving).
@@ -17,6 +20,5 @@ There are some other tweaks on this machine that aren't included in this repo. `
 ## To-do
 
 * A script to automate creation/deletion of symlinks to home
-* Add .vimrc
 * Add .gitconfig
 * Add copy of `pacman -Qqe`
