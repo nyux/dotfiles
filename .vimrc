@@ -180,3 +180,11 @@ map <leader>ss :setlocal spell!<cr>
 " For convenience, switch the ; and : keys
 noremap ; :
 noremap : ;
+
+
+
+
+" Sources
+" Lots of this file came from http://amix.dk/vim/vimrc.html
+" as well as https://github.com/W4RH4WK/dotVim/blob/master/vimrc
+" and the system-wide arch defaults, at /usr/share/vim/vimfiles/archlinux.vim
