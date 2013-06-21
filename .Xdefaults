@@ -28,8 +28,8 @@ URxvt*color0  : #2E3436
 URxvt*color8  : #555753
 
 ! red
-URxvt*color1  : #a31604
-URxvt*color9  : #c60001
+URxvt*color1  : #de2345
+URxvt*color9  : #902020
 
 ! green
 URxvt*color2  : #447241
@@ -40,15 +40,15 @@ URxvt*color3  : #c1951a
 URxvt*color11 : #d5a30e
 
 ! blue
-URxvt*color4  : #425387
-URxvt*color12 : #4a5a8d
+URxvt*color4  : #447099
+URxvt*color12 : #345fa8
 
 ! magenta
-URxvt*color5  : #965d98
-URxvt*color13 : #893c8c
+URxvt*color5  : #a422a3
+URxvt*color13 : #a42273
 
 ! cyan
-URxvt*color6  : #06989A
+URxvt*color6  : #4f9fdc
 URxvt*color14 : #12bccb
 
 ! white
