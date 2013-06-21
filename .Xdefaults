@@ -40,7 +40,7 @@ URxvt*color3  : #c1951a
 URxvt*color11 : #d5a30e
 
 ! blue
-URxvt*color4  : #447099
+URxvt*color4  : #446099
 URxvt*color12 : #345fa8
 
 ! magenta
