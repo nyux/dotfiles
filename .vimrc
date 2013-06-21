@@ -5,13 +5,13 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-if has("vms")
-    " do not keep a backup file, use versions instead
-    set nobackup
-else
-    " keep a backup file
-    set backup
-endif
+" if has("vms")
+"     " do not keep a backup file, use versions instead
+"     set nobackup
+" else
+"     " keep a backup file
+"     set backup
+" endif
 
 " keep 50 lines of command line history
 set history=50
