@@ -131,7 +131,7 @@ if [ -f ~/.aliases.bash ]; then
 	. ~/.aliases.bash
 fi
 
-PATH=/home/nyux/bin:$PATH:$(ruby -rubygems -e "puts Gem.user_dir")
+PATH=/usr/local/texlive/2012/bin/x86_64-linux::$PATH
 
-PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIPurple\] "
+PS1="\[$Red\][\T]\[$IYellow\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIWhite\] "
 trap 'echo -ne "\e[0m"' DEBUG

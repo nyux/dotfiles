@@ -8,6 +8,8 @@ alias untar='tar -zxvf'
 alias irc="ssh emilia@zecora.aiiane.com"
 alias moons="ssh eazure@moons.cs.unm.edu"
 
+alias idle="idle-python3.2"
+
 moonscp() {
     scp $1 eazure@moons.cs.unm.edu:$2
 }

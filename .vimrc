@@ -127,7 +127,7 @@ set ruler
 " possibilities: Mustang, astronaut, darkburn, desert256, gentooish?
 " herald, jellybeans
 set background=dark
-colorscheme jellybeans
+colorscheme desert
 
 " Add a vertical column at line 80
 set colorcolumn=80 
