@@ -8,9 +8,19 @@ alias untar='tar -zxvf'
 alias irc="ssh emilia@zecora.aiiane.com"
 alias moons="ssh eazure@moons.cs.unm.edu"
 
-book() {
-  pandoc --latex-engine=xelatex --template='.pandoc/templates/book.latex' -o $2 $1
+moonscp() {
+    scp $1 eazure@moons.cs.unm.edu:$2
 }
+
+book() {
+  pandoc --latex-engine=xelatex --template='/home/nyux/.pandoc/templates/book.latex' -o $2 $1
+}
+
+article() {
+  pandoc --latex-engine=xelatex -so $2 $1
+}
+
+
 
 # showa: to remind yourself of an alias (given some part of it)
 showa () { /usr/bin/grep -i -a1 $@ ~/.aliases.bash | grep -v '^\s*$' ; }
