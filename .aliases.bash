@@ -11,15 +11,22 @@ alias moons="ssh eazure@moons.cs.unm.edu"
 alias idle="idle-python3.2"
 
 moonscp() {
-    scp $1 eazure@moons.cs.unm.edu:$2
+    if [$1 = "to"]; then
+        scp $1 eazure@moons.cs.unm.edu:$2
+    elif [$1 = "from"]; then
+        scp eazure@moons.cs.unm.edu:$1 $2
+    else
+        echo "Usage: moonscp [to|from] file1 file2"
+        echo "To be used from home computer only."
+    fi
 }
 
 book() {
-  pandoc --latex-engine=xelatex --template='/home/nyux/.pandoc/templates/book.latex' -o $2 $1
+    pandoc --latex-engine=xelatex --template='/home/nyux/.pandoc/templates/book.latex' -o $2 $1
 }
 
 article() {
-  pandoc --latex-engine=xelatex -so $2 $1
+    pandoc --latex-engine=xelatex -so $2 $1
 }
 
 
@@ -29,17 +36,17 @@ showa () { /usr/bin/grep -i -a1 $@ ~/.aliases.bash | grep -v '^\s*$' ; }
 
 # performs 'ls' after 'cd' if directory change is successful.
 cdls() {
-  builtin cd "$*"
-  RESULT=$?
-  if [ "$RESULT" -eq 0 ]; then
-    ls
-  fi
+    builtin cd "$*"
+    RESULT=$?
+    if [ "$RESULT" -eq 0 ]; then
+        ls
+    fi
 }
 
 orphans() {
-  if [[ ! -n $(pacman -Qdt) ]]; then
-    echo "No orphans to remove."
-  else
-    sudo pacman -Rs $(pacman -Qdtq)
-  fi
+    if [[ ! -n $(pacman -Qdt) ]]; then
+        echo "No orphans to remove."
+    else
+        sudo pacman -Rs $(pacman -Qdtq)
+    fi
 }
