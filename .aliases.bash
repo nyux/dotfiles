@@ -11,10 +11,10 @@ alias moons="ssh eazure@moons.cs.unm.edu"
 alias idle="idle-python3.2"
 
 moonscp() {
-    if [$1 = "to"]; then
-        scp $1 eazure@moons.cs.unm.edu:$2
-    elif [$1 = "from"]; then
-        scp eazure@moons.cs.unm.edu:$1 $2
+    if [ $1 = "to" ]; then
+        scp $2 eazure@moons.cs.unm.edu:$3
+    elif [ $1 = "from" ]; then
+        scp eazure@moons.cs.unm.edu:$2 $3
     else
         echo "Usage: moonscp [to|from] file1 file2"
         echo "To be used from home computer only."
