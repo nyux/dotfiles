@@ -132,16 +132,17 @@ bindsym $mod+s mode "resize"
 # Other keybinds
 ##############################################################################
 
-# start a terminal
+# application shortcuts
 bindsym $mod+t exec --no-startup-id urxvt
+bindsym $mod+e exec subl
+bindsym $mod+c exec chromium
+bindsym $mod+Shift+t exec hotot-gtk3
+bindsym $mod+z exec zathura
+bindsym $mod+w exec firefox
 
 # start dmenu
 bindsym $mod+p exec --no-startup-id dmenu_run -nb black
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-bindsym $mod+w exec firefox
-bindsym $mod+e exec subl
-bindsym $mod+Shift+t exec hotot-gtk3
 
 # reload i3 config, restart i3, or kill i3 and logout
 bindsym $mod+r reload
