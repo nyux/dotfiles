@@ -10,6 +10,9 @@ alias moons="ssh eazure@moons.cs.unm.edu"
 
 alias idle="idle-python3.2"
 
+alias processing="/usr/local/processing/processing"
+    
+
 moonscp() {
     if [ $1 = "to" ]; then
         scp $2 eazure@moons.cs.unm.edu:$3
