@@ -16,8 +16,19 @@ set backspace=indent,eol,start
 " keep 50 lines of command line history
 set history=50
 
-" display incomplete commands
-set showcmd
+if has('cmdline_info')
+    " Show the line + column number of the cursor position, separated by a comma.
+    set ruler
+
+    " enhance the ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+
+    " display incomplete commands
+    set showcmd
+endif
+
+" display current mode
+set showmode
 
 " do incremental searching
 set incsearch
@@ -26,6 +37,9 @@ set incsearch
 if has('mouse')
     set mouse=a
 endif
+
+" Allow buffer switching without saving
+set hidden
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -66,7 +80,10 @@ else
     set autoindent  " always set autoindenting on
 endif
 
-" Adds line numbers on the left margin.
+" Prevents inserting two spaces after punctuation on a join (J)
+set nojoinspaces
+
+" Adds relative line numbers on the left margin.
 set relativenumber
 
 " Number of spaces that a <Tab> in the file counts for.
@@ -89,7 +106,7 @@ set smarttab
 set backspace=indent,eol,start
 
 " Makes h, l keys wrap around lines, as they should
-set whichwrap+=<,>,h,l
+set whichwrap+=b,s,[,],<,>,h,l
 
 " Show (partial) command in status line.
 set showcmd
@@ -115,8 +132,6 @@ set smartcase
 "" mode or when using the "o" or "O" command).
 set autoindent
 
-" Show the line + column number of the cursor position, separated by a comma.
-set ruler
 
 " When set to "dark", Vim will try to use colors that look good on a dark
 " background. When set to "light", Vim will try to use colors that look
@@ -141,8 +156,8 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Treat long lines as break lines (useful when moving)
-map j gj 
-map k gk
+noremap j gj 
+noremap k gk
 
 " remember info about open buffers on close
 set viminfo^=%
@@ -154,11 +169,15 @@ map <leader>ss :setlocal spell!<cr>
 noremap ; :
 noremap : ;
 
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
 
-
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+noremap Y y$
 
 " Sources
 " Lots of this file came from http://amix.dk/vim/vimrc.html
 " as well as https://github.com/W4RH4WK/dotVim/blob/master/vimrc
-" and the system-wide arch defaults, at /usr/share/vim/vimfiles/archlinux.vim
-"
+" the system-wide arch defaults, at /usr/share/vim/vimfiles/archlinux.vim
+" and also https://github.com/spf13/spf13-vim/blob/3.0/.vimrc
