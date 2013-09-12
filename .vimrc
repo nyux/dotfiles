@@ -16,9 +16,6 @@ set backspace=indent,eol,start
 " keep 50 lines of command line history
 set history=50
 
-" show the cursor position all the time
-set ruler
-
 " display incomplete commands
 set showcmd
 
@@ -70,7 +67,7 @@ else
 endif
 
 " Adds line numbers on the left margin.
-set number
+set relativenumber
 
 " Number of spaces that a <Tab> in the file counts for.
 set tabstop=4
@@ -147,13 +144,7 @@ let g:mapleader = ","
 map j gj 
 map k gk
 
-" Return to last edit position when opening files
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-
-" Remember info about open buffers on close
+" remember info about open buffers on close
 set viminfo^=%
 
 " Pressing ,ss will toggle and untoggle spell checking
@@ -170,3 +161,4 @@ noremap : ;
 " Lots of this file came from http://amix.dk/vim/vimrc.html
 " as well as https://github.com/W4RH4WK/dotVim/blob/master/vimrc
 " and the system-wide arch defaults, at /usr/share/vim/vimfiles/archlinux.vim
+"
