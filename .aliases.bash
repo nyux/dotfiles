@@ -8,6 +8,8 @@ alias untar='tar -zxvf'
 alias irc="ssh emilia@zecora.aiiane.com"
 alias moons="ssh eazure@moons.cs.unm.edu"
 
+alias mirrors="reflector --verbose -l 10 --sort rate --save /etc/pacman.d/mirrorlist"
+
 moonscp() {
     if [ $1 = "to" ]; then
         scp $2 eazure@moons.cs.unm.edu:$3
