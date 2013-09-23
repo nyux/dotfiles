@@ -8,14 +8,11 @@ alias untar='tar -zxvf'
 alias irc="ssh emilia@zecora.aiiane.com"
 alias moons="ssh eazure@moons.cs.unm.edu"
 
-<<<<<<< HEAD
 alias idle="idle-python3.2"
 
 alias processing="/usr/local/processing/processing"
     
-=======
 alias mirrors="reflector --verbose -l 10 --sort rate --save /etc/pacman.d/mirrorlist"
->>>>>>> master
 
 moonscp() {
     if [ $1 = "to" ]; then
