@@ -145,3 +145,4 @@ if [ $(uname) = "Linux" ]; then
     trap 'echo -ne "\e[0m"' DEBUG
 else
     PS1="\[$Red\][\T]\[$IYellow\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
+fi
