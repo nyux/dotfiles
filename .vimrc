@@ -83,6 +83,8 @@ endif
 " Prevents inserting two spaces after punctuation on a join (J)
 set nojoinspaces
 
+" Shows absolute line number for the current line when paired
+set number
 " Adds relative line numbers on the left margin.
 set relativenumber
 
@@ -122,11 +124,11 @@ set hlsearch
 set incsearch
 
 " Ignore case in search patterns.
-set ignorecase      
+set ignorecase
 
 " Override the 'ignorecase' option if the search pattern contains upper case
 " characters.
-set smartcase       
+set smartcase
 
 " Copy indent from current line when starting a new line (typing <CR> in Insert
 "" mode or when using the "o" or "O" command).
@@ -142,7 +144,7 @@ set background=dark
 colorscheme desert
 
 " Add a vertical column at line 80
-set colorcolumn=80 
+set colorcolumn=80
 
 " Let vim display unicode reasonably.
 set encoding=utf-8

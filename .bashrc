@@ -102,7 +102,14 @@ shopt -s checkwinsize
 # colorize grep, ls, tree
 export GREP_OPTIONS="--color=auto"
 alias tree='tree -Ch'
-alias ls='ls -h --color=auto'
+
+if ls --color > /dev/nulol 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # OS X
+    colorflag="-G"
+fi
+
+alias ls='ls -h ${colorflag}'
 
 export LANG=en_US.UTF-8
 export BROWSER=firefox
@@ -133,5 +140,8 @@ fi
 
 PATH=/usr/local/texlive/2012/bin/x86_64-linux::$PATH
 
-PS1="\[$Red\][\T]\[$IYellow\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIWhite\] "
-trap 'echo -ne "\e[0m"' DEBUG
+if [ $(uname) = "Linux" ]; then
+    PS1="\[$Red\][\T]\[$IYellow\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIWhite\] "
+    trap 'echo -ne "\e[0m"' DEBUG
+else
+    PS1="\[$Red\][\T]\[$IYellow\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
