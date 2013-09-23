@@ -83,6 +83,8 @@ endif
 " Prevents inserting two spaces after punctuation on a join (J)
 set nojoinspaces
 
+" Shows absolute line number for the current line when paired
+set number
 " Adds relative line numbers on the left margin.
 set relativenumber
 
