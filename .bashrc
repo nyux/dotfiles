@@ -102,7 +102,14 @@ shopt -s checkwinsize
 # colorize grep, ls, tree
 export GREP_OPTIONS="--color=auto"
 alias tree='tree -Ch'
-alias ls='ls -h --color=auto'
+
+if ls --color > /dev/nulol 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # OS X
+    colorflag="-G"
+fi
+
+alias ls='ls -h ${colorflag}'
 
 export LANG=en_US.UTF-8
 export BROWSER=firefox
@@ -133,5 +140,9 @@ fi
 
 PATH=/home/nyux/bin:$PATH:$(ruby -rubygems -e "puts Gem.user_dir")
 
-PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIPurple\] "
-trap 'echo -ne "\e[0m"' DEBUG
+if [ $(uname) = "Linux" ]; then
+    PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIPurple\] "
+    trap 'echo -ne "\e[0m"' DEBUG
+else
+    PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
+fi
