@@ -156,7 +156,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Treat long lines as break lines (useful when moving)
-noremap j gj 
+noremap j gj
 noremap k gk
 
 " remember info about open buffers on close
