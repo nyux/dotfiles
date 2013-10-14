@@ -103,7 +103,7 @@ shopt -s checkwinsize
 export GREP_OPTIONS="--color=auto"
 alias tree='tree -Ch'
 
-if ls --color > /dev/nulol 2>&1; then # GNU `ls`
+if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
 else # OS X
     colorflag="-G"
