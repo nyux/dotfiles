@@ -161,6 +161,9 @@ let g:mapleader = ","
 noremap j gj
 noremap k gk
 
+noremap <Up> g<Up>
+noremap <Down> g<Down>
+
 " remember info about open buffers on close
 set viminfo^=%
 
