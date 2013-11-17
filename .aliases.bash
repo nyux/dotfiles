@@ -29,7 +29,9 @@ article() {
     pandoc --latex-engine=xelatex -so $2 $1
 }
 
-
+poem() {
+    pandoc --latex-engine=xelatex --template='/home/nyux/.pandoc/templates/poem.latex' -so $2 $1
+}
 
 # showa: to remind yourself of an alias (given some part of it)
 showa () { /usr/bin/grep -i -a1 $@ ~/.aliases.bash | grep -v '^\s*$' ; }
