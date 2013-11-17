@@ -16,4 +16,5 @@ int main(void) {
 
 	printf("suggested: %s\n", topics[today->tm_yday % num_of_topics]);
 
+    return 0;
 }
