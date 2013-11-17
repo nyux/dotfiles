@@ -3,9 +3,10 @@
 
 int main(void) {
 	
-	// Things I'm into right now. Changes with time, of course.
-	char *topics[] = {"blog", "topology", "perl", "drawing", "c",
-		"calc", "discrete maths", "ta work", "real analysis", "haskell"};
+    /* Things I wanna do. Changes with time, of course. */
+	char *topics[] = {"novel", "drawing", "assembly", "short stories",
+        "read fiction", "go", "read non-fiction", "perl", "irc bot",
+		"calc", "discrete maths", "relax", "real analysis", "haskell"};
 	int num_of_topics = sizeof(topics)/sizeof(char *);
 
 	struct tm *today;
@@ -13,6 +14,6 @@ int main(void) {
 
 	localtime_r(&now, today);
 
-	printf("%s\n", topics[today->tm_yday % num_of_topics]);
+	printf("suggested: %s\n", topics[today->tm_yday % num_of_topics]);
 
 }
