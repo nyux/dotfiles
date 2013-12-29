@@ -77,13 +77,15 @@ if has("autocmd")
 
     augroup END
 else
-    set autoindent  " always set autoindenting on
+    " always set autoindenting on
+    set autoindent  
 endif
 
 " Prevents inserting two spaces after punctuation on a join (J)
 set nojoinspaces
 
-" Shows absolute line number for the current line when paired
+" Shows absolute line number for the current line when paired with
+" relative line numbering
 set number
 " Adds relative line numbers on the left margin.
 set relativenumber
@@ -133,7 +135,6 @@ set smartcase
 " Copy indent from current line when starting a new line (typing <CR> in Insert
 "" mode or when using the "o" or "O" command).
 set autoindent
-
 
 " When set to "dark", Vim will try to use colors that look good on a dark
 " background. When set to "light", Vim will try to use colors that look
