@@ -30,7 +30,7 @@ article() {
 }
 
 poem() {
-    pandoc --latex-engine=xelatex --template='/home/nyux/.pandoc/templates/poem.latex' -so $2 $1
+    pandoc --latex-engine=xelatex --template='/home/nyux/.pandoc/templates/poem.latex' -o $2 $1
 }
 
 # showa: to remind yourself of an alias (given some part of it)
