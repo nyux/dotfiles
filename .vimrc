@@ -189,6 +189,15 @@ noremap Y y$
 nnoremap <C-m> i<CR><ESC>
 inoremap <C-m> <ESC>a<CR>
 
+" Enable vim-latexsuite, vim-taglist, and vim-rainbow plugins
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor="latex"
+
+let g:rainbow_active = 1
+let g:rainbow_operators = 1
+
+noremap <leader>t :TlistToggle<CR>
+
 " Sources
 " Lots of this file came from http://amix.dk/vim/vimrc.html
 " as well as https://github.com/W4RH4WK/dotVim/blob/master/vimrc

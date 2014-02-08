@@ -10,8 +10,7 @@ Obviously, `i3`, and `i3bar`, found in the arch repos under the `i3` group. `con
 
 Optional dependencies, to take advantage of all the functionality here: `lesspipe`, `xbacklight`, `urxvt`, and `python2-pygments`.
 
-.vimrc is here, finally. Dependencies are `vim-colorsamplerpack`
-and `vim-guicolorscheme`.
+The `.vimrc` has been greatly expanded. Dependencies from the pacman repos are `vim-colorsamplerpack`, `vim-latexsuite`, `vim-taglist` and `vim-guicolorscheme`. From the AUR, `vim-rainbow` and `vim-molokai`.
 
 ## Other tweaks
 
