@@ -146,3 +146,12 @@ if [ $(uname) = "Linux" ]; then
 else
     PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$Color_Off\] "
 fi
+
+
+
+# makes tab stops display as four spaces in the terminal
+# the 'clear' is to get rid of the extra newline displayed after the
+# 'tabs' command is run. 
+tabs 1, 4+, 4+, 4+, 4+, 4+, 4+, 4+, 4+
+clear
+
