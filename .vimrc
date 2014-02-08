@@ -48,39 +48,6 @@ if &t_Co > 2 || has("gui_running")
     set hlsearch
 endif
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-    " Enable file type detection.
-    " Use the default filetype settings, so that mail gets 'tw' set to 72,
-    " 'cindent' is on in C files, etc.
-    " Also load indent files, to automatically do language-dependent indenting.
-    filetype plugin indent on
-
-    " Put these in an autocmd group, so that we can delete them easily.
-    augroup vimrcEx
-    au!
-
-    " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
-
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    " Also don't do it when the mark is in the first line, that is the default
-    " position when opening a file.
-    autocmd BufReadPost *
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \     exe "normal! g`\"" |
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \     exe "normal! g`\"" |
-        \ endif
-
-    augroup END
-else
-    " always set autoindenting on
-    set autoindent  
-endif
-
 " Prevents inserting two spaces after punctuation on a join (J)
 set nojoinspaces
 
@@ -105,6 +72,44 @@ set expandtab
 " 'tabstop' is used in other places. A <BS> will delete a 'shiftwidth'
 " worth of space at the start of the line.
 set smarttab
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+    " Enable file type detection.
+    " Use the default filetype settings, so that mail gets 'tw' set to 72,
+    " 'cindent' is on in C files, etc.
+    " Also load indent files, to automatically do language-dependent indenting.
+    filetype plugin indent on
+
+    " Put these in an autocmd group, so that we can delete them easily.
+    augroup vimrcEx
+    au!
+
+    " expandtab should always be used... except for when dealing with a Makefile
+    autocmd FileType make set noexpandtab
+
+    " For all text files set 'textwidth' to 78 characters.
+    autocmd FileType text setlocal textwidth=78
+
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    " Also don't do it when the mark is in the first line, that is the default
+    " position when opening a file.
+    autocmd BufReadPost *
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \     exe "normal! g`\"" |
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \     exe "normal! g`\"" |
+        \ endif
+
+    augroup END
+else
+    " always set autoindenting on
+    " Copy indent from current line when starting a new line (typing <CR> in Insert
+    " mode or when using the "o" or "O" command).
+    set autoindent  
+endif
 
 " Makes backspace work sensibly
 set backspace=indent,eol,start
@@ -131,10 +136,6 @@ set ignorecase
 " Override the 'ignorecase' option if the search pattern contains upper case
 " characters.
 set smartcase
-
-" Copy indent from current line when starting a new line (typing <CR> in Insert
-"" mode or when using the "o" or "O" command).
-set autoindent
 
 " When set to "dark", Vim will try to use colors that look good on a dark
 " background. When set to "light", Vim will try to use colors that look
