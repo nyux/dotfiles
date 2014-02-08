@@ -183,6 +183,12 @@ vnoremap > >gv
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 noremap Y y$
 
+" split a line at cursor position
+" insert mode has to be handled separately because it interprets
+" 'cursor position' in a slightly non-intuitive way.
+nnoremap <C-m> i<CR><ESC>
+inoremap <C-m> <ESC>a<CR>
+
 " Sources
 " Lots of this file came from http://amix.dk/vim/vimrc.html
 " as well as https://github.com/W4RH4WK/dotVim/blob/master/vimrc
