@@ -139,6 +139,7 @@ bindsym $mod+c exec chromium
 bindsym $mod+Shift+t exec hotot-gtk3
 bindsym $mod+z exec zathura
 bindsym $mod+w exec firefox
+bindsym $mod+g exec gvim
 
 # start dmenu
 bindsym $mod+p exec --no-startup-id dmenu_run -nb black
