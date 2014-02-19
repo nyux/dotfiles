@@ -143,7 +143,7 @@ set smartcase
 " possibilities: Mustang, astronaut, darkburn, desert256, gentooish?
 " herald, jellybeans
 set background=dark
-colorscheme jellybeans
+colorscheme molokai
 
 " Add a vertical column at line 80
 set colorcolumn=80
@@ -183,11 +183,12 @@ vnoremap > >gv
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 noremap Y y$
 
-" split a line at cursor position
-" insert mode has to be handled separately because it interprets
-" 'cursor position' in a slightly non-intuitive way.
+" split a line at cursor position in normal mode
 nnoremap <C-m> i<CR><ESC>
-inoremap <C-m> <ESC>a<CR>
+
+" automatically change to a file's directory when opening it.
+" helps with certain syntastic checkers
+set autochdir
 
 " Enable vim-latexsuite, vim-taglist, and vim-rainbow plugins
 set grepprg=grep\ -nH\ $*
@@ -197,6 +198,11 @@ let g:rainbow_active = 1
 let g:rainbow_operators = 1
 
 noremap <leader>t :TlistToggle<CR>
+
+noremap <leader>sc :SyntasticCheck<CR>
+noremap <leader>sr :SyntasticReset<CR>
+
+noremap <leader>h :noh<CR>
 
 " Sources
 " Lots of this file came from http://amix.dk/vim/vimrc.html
