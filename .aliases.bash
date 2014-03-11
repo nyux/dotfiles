@@ -10,6 +10,15 @@ alias moons="ssh eazure@moons.cs.unm.edu"
 
 alias mirrors="reflector --verbose -l 10 --sort rate --save /etc/pacman.d/mirrorlist"
 
+#alias fpath="find `pwd` -name"
+
+fpath() {
+    for file in "$@"
+    do
+        find `pwd` -name "$file"
+    done
+}
+
 moonscp() {
     if [ $1 = "to" ]; then
         scp $2 eazure@moons.cs.unm.edu:$3
