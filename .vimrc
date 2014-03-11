@@ -170,7 +170,7 @@ noremap <Down> g<Down>
 set viminfo^=%
 
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+nnoremap <leader>ss :setlocal spell!<cr>
 
 " For convenience, switch the ; and : keys
 noremap ; :
