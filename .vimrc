@@ -162,9 +162,10 @@ let g:mapleader = ","
 " Treat long lines as break lines (useful when moving)
 noremap j gj
 noremap k gk
-
 noremap <Up> g<Up>
 noremap <Down> g<Down>
+inoremap <Up> <ESC>g<Up>i
+inoremap <Down> <ESC>g<Down>i
 
 " remember info about open buffers on close
 set viminfo^=%
