@@ -147,6 +147,8 @@ colorscheme molokai
 
 " Add a vertical column at line 80
 set colorcolumn=80
+highlight ColorColumn guibg=Gray14
+
 
 " Let vim display unicode reasonably.
 set encoding=utf-8
