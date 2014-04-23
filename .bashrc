@@ -138,7 +138,7 @@ if [ -f ~/.aliases.bash ]; then
 	. ~/.aliases.bash
 fi
 
-PATH=/home/nyux/bin:$PATH:$(ruby -rubygems -e "puts Gem.user_dir")
+PATH=/home/nyux/bin:$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
 
 if [ $(uname) = "Linux" ]; then
     PS1="\[$Blue\][\T]\[$IGreen\][\u@\h]\[$Cyan\][\w]\[$BIPurple\]\$\[$BIPurple\] "
