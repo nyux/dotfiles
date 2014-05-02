@@ -61,3 +61,7 @@ orphans() {
         sudo pacman -Rs $(pacman -Qdtq)
     fi
 }
+
+git-hist() {
+    git --no-pager log --stat --graph --pretty=format:"%C(green)%h%C(reset) - %C(magenta)%cn, %C(cyan)%ar, %C(blue)%ad%C(reset) : %C(bold white)%s%C(reset)" $@
+}
