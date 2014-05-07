@@ -8,9 +8,9 @@ The configs are no longer geared towards supporting both Linux and OS X, which t
 
 Obviously, `i3`, and `i3bar`, found in the arch repos under the `i3` group. `conky`, `bash`, `screen`. `python` --- since this runs on an archlinux box, this refers to `python3`, though it should be trivially easy to backport.
 
-Optional dependencies, to take advantage of all the functionality here: `lesspipe`, `xbacklight`, `urxvt`, and `python2-pygments`.
+There are some optional dependencies, to take advantage of all the functionality expressed in the i3 config file. From the Arch repos: `lesspipe`, `xbacklight`, `urxvt`, and `python2-pygments`; from the AUR: `xcalib`.
 
-The `.vimrc` has been greatly expanded. Dependencies from the pacman repos are `vim-colorsamplerpack`, `vim-latexsuite`, `vim-taglist` and `vim-guicolorscheme`. From the AUR, `vim-rainbow` and `vim-molokai`.
+The `.vimrc` has been greatly expanded, as has the number of dependencies. From the Arch repos: `vim-colorsamplerpack`, `vim-latexsuite`, `vim-taglist` and `vim-guicolorscheme`; from the AUR: `vim-rainbow` and `vim-molokai`.
 
 ## Other tweaks
 
