@@ -10,7 +10,7 @@ import re
 import subprocess
 from subprocess import Popen, PIPE
 
-command = Popen(["amixer", "get", "'Master',0"], stdout=PIPE)
+command = Popen("amixer get 'Master',0".split(), stdout=PIPE)
 output = command.communicate()[0].decode('utf-8')
 
 volume = re.search("[0-9]{1,3}%", output).group()
