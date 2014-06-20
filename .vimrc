@@ -202,8 +202,12 @@ noremap <leader>t :TlistToggle<CR>
 
 noremap <leader>sc :SyntasticCheck<CR>
 noremap <leader>sr :SyntasticReset<CR>
+let g:syntastic_cpp_compiler_options = "-std=c++11"
 
 noremap <leader>h :noh<CR>
+
+" attempt at making an auto-indent shortcut
+noremap <leader>i magg=G`a<CR>:delmarks a<CR>
 
 " Sources
 " Lots of this file came from http://amix.dk/vim/vimrc.html
