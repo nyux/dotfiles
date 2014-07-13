@@ -9,12 +9,13 @@ pad_percents 3
 override_utf8_locale yes
 
 TEXT
-,[{"full_text" : " ☿ ❤ $acpitemp°C [$cpu%] ", "color": "\#DC322F"},
+,[{"full_text" : " ☿ ☽ $acpitemp°C [$cpu%] ", "color": "\#DC322F"},
   {"full_text" : " ♀ ≣ ${exec ~/.i3/amixer.py} ", "color" : "\#B58900"},
   {"full_text" : " ♁ ⌨ ${exec ~/.i3/brightness.py -k} ⎚ ${exec ~/.i3/brightness.py -m} ", "color" : "\#DFDFDF"},
   {"full_text" : " ♂ ⚘ ${exec ~/.i3/study.out} ", "color" : "\#DB882E"},
   {"full_text" : " ♃ ≈ ${wireless_essid wlp2s0} ", "color" : "\#33CC99"},
   {"full_text" : " ♄ ☇ [${battery_time BAT0}] [${battery_short BAT0}] ", "color" : "${exec ~/.i3/battery.py}"},
   {"full_text" : " ♅ ᴥ ${time %a %e %b}", "color" : "\#CD23CA"},
-  {"full_text" : " ♆ ⟆ ${time %l:%M:%S %p} ", "color" : "\#4599CE3"}
+  {"full_text" : " ♆ ⟆ ${time %l:%M:%S %p} ", "color" : "\#4599CE3"},
+  {"full_text" : " ♇ ❤ ${tztime Europe/Amsterdam %l:%M:%S %p} ", "color" : "\#E299EE"}
 ]
