@@ -3,7 +3,7 @@
 import argparse
 from subprocess import Popen, PIPE
 
-brightness_control = '/sys/class/leds/asus::kbd_backlight/brightness'
+brightness_control = '/sys/class/leds/phy0-led/brightness'
 max_brightness = 3
 min_brightness = 0
 
