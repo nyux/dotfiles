@@ -14,11 +14,11 @@ fi
 xrdb -merge ~/.Xresources
 
 xset -dpms
+setterm -blank 0 -powersafe off -powerdown 0
 xset s off
 
 setxkbmap -option compose:menu
 
-xinput set-prop 'ELAN Touchscreen' 'Device Enabled' 0
 
 # exec gnome-session
 # exec startkde
