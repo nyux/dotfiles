@@ -134,7 +134,7 @@ bindsym $mod+s mode "resize"
 
 # application shortcuts
 bindsym $mod+t exec --no-startup-id urxvt
-bindsym $mod+e exec subl
+bindsym $mod+e exec subl3
 bindsym $mod+c exec chromium
 bindsym $mod+Shift+t exec hotot-gtk3
 bindsym $mod+z exec zathura
