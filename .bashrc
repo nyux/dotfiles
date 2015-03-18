@@ -155,3 +155,4 @@ fi
 tabs 1, 4+, 4+, 4+, 4+, 4+, 4+, 4+, 4+
 clear
 
+source /usr/share/doc/pkgfile/command-not-found.bash
