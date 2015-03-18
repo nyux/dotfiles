@@ -143,11 +143,11 @@ set smartcase
 " possibilities: Mustang, astronaut, darkburn, desert256, gentooish?
 " herald, jellybeans
 set background=dark
-colorscheme molokai
+colorscheme Tomorrow-Night
 
 " Add a vertical column at line 80
 set colorcolumn=80
-highlight ColorColumn guibg=Gray14
+"highlight ColorColumn guibg=Gray1
 
 
 " Let vim display unicode reasonably.
@@ -204,10 +204,14 @@ noremap <leader>sc :SyntasticCheck<CR>
 noremap <leader>sr :SyntasticReset<CR>
 let g:syntastic_cpp_compiler_options = "-std=c++11"
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 noremap <leader>h :noh<CR>
 
 " attempt at making an auto-indent shortcut
 noremap <leader>i magg=G`a<CR>:delmarks a<CR>
+noremap <leader>g :Goyo<CR>
 
 " Sources
 " Lots of this file came from http://amix.dk/vim/vimrc.html
