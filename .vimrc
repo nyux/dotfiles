@@ -198,6 +198,19 @@ let g:tex_flavor="latex"
 let g:rainbow_active = 1
 let g:rainbow_operators = 1
 
+function ToggleColorColumn ()
+    if &colorcolumn == 80
+        set colorcolumn=0
+    else
+        set colorcolumn=80
+    endif
+endfunction
+
+noremap <leader>tc :call ToggleColorColumn()<CR>
+
+noremap <leader>wc :! wc %<CR>
+noremap <leader>x :! cat % \| xclip -i<CR>
+
 noremap <leader>t :TlistToggle<CR>
 
 noremap <leader>sc :SyntasticCheck<CR>
